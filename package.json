@@ -1,0 +1,16 @@
+{
+  "name": "@louth/app-monorepo-boilerplate",
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:backend": "pnpm --filter @louth/backend dev",
+    "dev:frontend": "pnpm --filter @louth/frontend dev",
+    "dev": "pnpm --parallel -r dev"
+  },
+  "author": "Loïc OUTHIER",
+  "license": "MIT",
+  "packageManager": "pnpm@10.11.0"
+}
