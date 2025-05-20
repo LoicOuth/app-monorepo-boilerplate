@@ -19,4 +19,32 @@ export default defineConfigWithVueTs(
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
   skipFormatting,
+
+  {
+    rules: {
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'variable',
+          format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+        },
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'class',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'interface',
+          format: ['PascalCase'],
+          custom: {
+            regex: '^I[A-Z]',
+            match: false,
+          },
+        },
+      ],
+    },
+  },
 )

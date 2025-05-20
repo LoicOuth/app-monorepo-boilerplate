@@ -1,0 +1,16 @@
+{
+  "errorMessages": {
+    "errorTitle": "An error has occurred.",
+    "defaultTitle": "Unknown error.",
+    "defaultDescription": "An unexpected error occurred during the previous action. Please try again later.",
+    "httpDescription": "A status {status} was received while communicating with {url}",
+    "httpQuotaExceed": "This action is not possible because the quota has been exceeded. Please contact your administrator.",
+    "httpNotFound": "The resource could not be found. Please try again.",
+    "httpInternalServerError": "Server error. Please try again later.",
+    "httpBadGateway": "Service unavailable. Please try again later.",
+    "httpDefault": "Error while communicating with the server.",
+    "httpConflict": {
+      "default": "Cette action est impossible à cause d'un conflit. La ressource est utilisée."
+    }
+  }
+}

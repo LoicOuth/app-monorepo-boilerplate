@@ -1,0 +1,16 @@
+{
+  "errorMessages": {
+    "errorTitle": "Une erreur est survenue.",
+    "defaultTitle": "Erreur inconnue.",
+    "defaultDescription": "Une erreur inattendue s'est produite lors de l'action précédente. Veuillez réessayer ultérieurement.",
+    "httpDescription": "Un statut {statut} a été reçu pendant la communication avec {url}",
+    "httpQuotaExceed": "Cette action est impossible car le quota a été dépassé. Veuillez contacter votre administrateur.",
+    "httpNotFound": "La ressource est introuvable. Veuillez réessayez.",
+    "httpInternalServerError": "Erreur serveur. Veuillez réessayez plus tard.",
+    "httpBadGateway": "Service indisponible. Veuillez réessayez plus tard.",
+    "httpDefault": "Erreur pendant la communication avec le serveur.",
+    "httpConflict": {
+      "default": "This action is impossible due to a conflict. The resource is in use."
+    }
+  }
+}

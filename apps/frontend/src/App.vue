@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+useHttpError()
 </script>
 
 <template>
-  <RouterView />
+  <Toast />
+  <router-view />
 </template>
