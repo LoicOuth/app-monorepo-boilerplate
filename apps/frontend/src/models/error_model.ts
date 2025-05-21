@@ -14,20 +14,7 @@ export enum HttpStatusCode {
   InternalServerError = 500,
   BadGateway = 502,
   NoContent = 204,
-}
-
-export class HttpError<T = object> extends Error {
-  httpStatus: HttpStatusCode
-  responseURL: string
-  body?: T
-
-  constructor(message: string, httpStatus: HttpStatusCode, responseURL: string, body?: T) {
-    super(message)
-    this.name = this.constructor.name
-    this.httpStatus = httpStatus
-    this.responseURL = responseURL
-    this.body = body
-  }
+  UnprocessableEntity = 422,
 }
 
 export interface HttpToastError {

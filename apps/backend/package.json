@@ -14,23 +14,13 @@
     "typecheck": "tsc --noEmit"
   },
   "imports": {
-    "#controllers/*": "./app/controllers/*.js",
-    "#exceptions/*": "./app/exceptions/*.js",
-    "#models/*": "./app/models/*.js",
-    "#mails/*": "./app/mails/*.js",
-    "#services/*": "./app/services/*.js",
-    "#listeners/*": "./app/listeners/*.js",
-    "#events/*": "./app/events/*.js",
-    "#middleware/*": "./app/middleware/*.js",
-    "#validators/*": "./app/validators/*.js",
-    "#providers/*": "./providers/*.js",
-    "#policies/*": "./app/policies/*.js",
-    "#abilities/*": "./app/abilities/*.js",
+    "#core/*": "./app/core/*.js",
+    "#auth/*": "./app/auth/*.js",
+    "#me/*": "./app/me/*.js",
     "#database/*": "./database/*.js",
     "#start/*": "./start/*.js",
     "#tests/*": "./tests/*.js",
-    "#config/*": "./config/*.js",
-    "#dtos/*": "./app/dtos/*.js"
+    "#config/*": "./config/*.js"
   },
   "exports": {
     "./api": "./.adonisjs/index.ts"
@@ -69,8 +59,8 @@
   },
   "hotHook": {
     "boundaries": [
-      "./app/controllers/**/*.ts",
-      "./app/middleware/*.ts"
+      "./app/*/controllers/**/*.ts",
+      "./app/*/middleware/*.ts"
     ]
   },
   "prettier": "@adonisjs/prettier-config"

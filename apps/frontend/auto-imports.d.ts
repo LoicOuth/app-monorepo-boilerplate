@@ -55,6 +55,7 @@ declare global {
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useAuthApi: (typeof import('./src/composables/api/use_auth_api'))['default']
   const useConfirm: typeof import('primevue')['useConfirm']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
@@ -62,13 +63,17 @@ declare global {
   const useI18n: typeof import('vue-i18n')['useI18n']
   const useId: typeof import('vue')['useId']
   const useLink: typeof import('vue-router')['useLink']
+  const useLoginMutation: typeof import('./src/composables/api/use_auth_api')['useLoginMutation']
+  const useMeQuery: typeof import('./src/composables/api/use_me_api')['useMeQuery']
   const useModel: typeof import('vue')['useModel']
+  const useMutation: typeof import('@tanstack/vue-query')['useMutation']
+  const useQuery: typeof import('@tanstack/vue-query')['useQuery']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
   const useToast: typeof import('primevue')['useToast']
-  const useUsersQuery: typeof import('./src/composables/api/use_user_api')['useUsersQuery']
+  const useUsersQuery: (typeof import('./src/composables/api/use_user_api'))['useUsersQuery']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
@@ -142,13 +147,16 @@ declare module 'vue' {
     readonly useI18n: UnwrapRef<typeof import('vue-i18n')['useI18n']>
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
+    readonly useLoginMutation: UnwrapRef<typeof import('./src/composables/api/use_auth_api')['useLoginMutation']>
+    readonly useMeQuery: UnwrapRef<typeof import('./src/composables/api/use_me_api')['useMeQuery']>
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
+    readonly useMutation: UnwrapRef<typeof import('@tanstack/vue-query')['useMutation']>
+    readonly useQuery: UnwrapRef<typeof import('@tanstack/vue-query')['useQuery']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
     readonly useToast: UnwrapRef<typeof import('primevue')['useToast']>
-    readonly useUsersQuery: UnwrapRef<typeof import('./src/composables/api/use_user_api')['useUsersQuery']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>

@@ -7,17 +7,28 @@
 import type { MakeTuyauRequest, MakeTuyauResponse } from '@tuyau/utils/types'
 import type { InferInput } from '@vinejs/vine/types'
 
-type ApiUsersGetHead = {
+type ApiAuthLoginPost = {
+  request: MakeTuyauRequest<InferInput<typeof import('../app/auth/controllers/login_controller.ts').default['validator']>>
+  response: MakeTuyauResponse<import('../app/auth/controllers/login_controller.ts').default['handle'], true>
+}
+type ApiMeGetHead = {
   request: unknown
-  response: MakeTuyauResponse<import('../app/controllers/users_controller.ts').default['index'], false>
+  response: MakeTuyauResponse<import('../app/me/controllers/me_controller.ts').default['index'], false>
 }
 export interface ApiDefinition {
   'api': {
-    'users': {
+    'auth': {
+      'login': {
+        '$url': {
+        };
+        '$post': ApiAuthLoginPost;
+      };
+    };
+    'me': {
       '$url': {
       };
-      '$get': ApiUsersGetHead;
-      '$head': ApiUsersGetHead;
+      '$get': ApiMeGetHead;
+      '$head': ApiMeGetHead;
     };
   };
 }

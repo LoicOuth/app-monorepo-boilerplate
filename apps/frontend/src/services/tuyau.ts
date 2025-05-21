@@ -5,4 +5,5 @@ export const tuyau = createTuyau({
   api,
   baseUrl: import.meta.env.VITE_API_URL,
   retry: undefined,
+  credentials: 'include',
 })
