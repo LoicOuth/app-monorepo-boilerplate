@@ -9,7 +9,15 @@ import type { InferInput } from '@vinejs/vine/types'
 
 type ApiAuthLoginPost = {
   request: MakeTuyauRequest<InferInput<typeof import('../app/auth/controllers/login_controller.ts').default['validator']>>
-  response: MakeTuyauResponse<import('../app/auth/controllers/login_controller.ts').default['handle'], true>
+  response: MakeTuyauResponse<import('../app/auth/controllers/login_controller.ts').default['handle'], true, import('../app/auth/controllers/login_controller.ts').default['validationExceptionResponse']>
+}
+type ApiAuthIdRedirectGetHead = {
+  request: unknown
+  response: MakeTuyauResponse<import('../app/auth/controllers/external_provider_login_controller.ts').default['redirect'], false>
+}
+type ApiAuthRegisterPost = {
+  request: MakeTuyauRequest<InferInput<typeof import('../app/auth/controllers/register_controller.ts').default['validator']>>
+  response: MakeTuyauResponse<import('../app/auth/controllers/register_controller.ts').default['handle'], true>
 }
 type ApiMeGetHead = {
   request: unknown
@@ -22,6 +30,19 @@ export interface ApiDefinition {
         '$url': {
         };
         '$post': ApiAuthLoginPost;
+      };
+      ':provider': {
+        'redirect': {
+          '$url': {
+          };
+          '$get': ApiAuthIdRedirectGetHead;
+          '$head': ApiAuthIdRedirectGetHead;
+        };
+      };
+      'register': {
+        '$url': {
+        };
+        '$post': ApiAuthRegisterPost;
       };
     };
     'me': {

@@ -1,8 +1,11 @@
-import User from '#auth/models/user'
+import User from '#me/models/user'
 import type { HttpContext } from '@adonisjs/core/http'
 import vine from '@vinejs/vine'
+import { JsonApiErrors } from '#core/exceptions/json_api_error_reporter'
+import { TuyauExceptionResponseInterface } from '@tuyau/utils/types'
 
-export default class LoginController {
+export default class LoginController implements TuyauExceptionResponseInterface {
+  declare validationExceptionResponse: JsonApiErrors
   static validator = vine.compile(
     vine.object({
       email: vine.string().email(),

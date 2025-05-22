@@ -68,11 +68,13 @@ declare global {
   const useModel: typeof import('vue')['useModel']
   const useMutation: typeof import('@tanstack/vue-query')['useMutation']
   const useQuery: typeof import('@tanstack/vue-query')['useQuery']
+  const useRegisterMutation: typeof import('./src/composables/api/use_auth_api')['useRegisterMutation']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
   const useToast: typeof import('primevue')['useToast']
+  const useTuyauMutation: typeof import('./src/composables/use_tuyau_mutation')['useTuyauMutation']
   const useUsersQuery: (typeof import('./src/composables/api/use_user_api'))['useUsersQuery']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
@@ -152,11 +154,13 @@ declare module 'vue' {
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
     readonly useMutation: UnwrapRef<typeof import('@tanstack/vue-query')['useMutation']>
     readonly useQuery: UnwrapRef<typeof import('@tanstack/vue-query')['useQuery']>
+    readonly useRegisterMutation: UnwrapRef<typeof import('./src/composables/api/use_auth_api')['useRegisterMutation']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
     readonly useToast: UnwrapRef<typeof import('primevue')['useToast']>
+    readonly useTuyauMutation: UnwrapRef<typeof import('./src/composables/use_tuyau_mutation')['useTuyauMutation']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>

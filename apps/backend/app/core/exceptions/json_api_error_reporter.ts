@@ -8,6 +8,8 @@ type JsonApiError = {
   meta?: Record<string, any>
 }
 
+export type JsonApiErrors = Record<string, JsonApiError>
+
 export class JsonApiErrorReporter implements ErrorReporterContract {
   /**
    * A flag to know if one or more errors have been
@@ -19,7 +21,7 @@ export class JsonApiErrorReporter implements ErrorReporterContract {
    * A collection of errors. Feel free to give accurate types
    * to this property
    */
-  errors: Record<string, JsonApiError> = {}
+  errors: JsonApiErrors = {}
 
   /**
    * VineJS call the report method

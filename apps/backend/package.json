@@ -20,10 +20,12 @@
     "#database/*": "./database/*.js",
     "#start/*": "./start/*.js",
     "#tests/*": "./tests/*.js",
-    "#config/*": "./config/*.js"
+    "#config/*": "./config/*.js",
+    "#types/*": "./types/*.js"
   },
   "exports": {
-    "./api": "./.adonisjs/index.ts"
+    "./api": "./.adonisjs/index.ts",
+    "./types": "./types/index.ts"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^7.8.2",
@@ -35,7 +37,7 @@
     "@japa/plugin-adonisjs": "^4.0.0",
     "@japa/runner": "^4.2.0",
     "@swc/core": "1.11.24",
-    "@tuyau/utils": "^0.0.7",
+    "@tuyau/utils": "file:../../../contributing/tuyau/packages/utils",
     "@types/luxon": "^3.6.2",
     "@types/node": "^22.15.18",
     "eslint": "^9.26.0",
@@ -46,12 +48,13 @@
     "typescript": "~5.8"
   },
   "dependencies": {
+    "@adonisjs/ally": "^5.1.0",
     "@adonisjs/auth": "^9.4.0",
-    "@adonisjs/core": "^6.18.0",
+    "@adonisjs/core": "6.18.0",
     "@adonisjs/cors": "^2.2.1",
     "@adonisjs/lucid": "^21.6.1",
     "@adonisjs/session": "^7.5.1",
-    "@tuyau/core": "^0.4.0",
+    "@tuyau/core": "file:../../../contributing/tuyau/packages/core",
     "@vinejs/vine": "^3.0.1",
     "luxon": "^3.6.1",
     "mysql2": "^3.14.1",

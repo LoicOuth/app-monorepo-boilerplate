@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import ExternalProviderButton from '@/components/auth/external_provider_button.vue'
+
 const router = useRouter()
+const toast = useToast()
 const { mutate: login, isPending, error } = useLoginMutation()
 
-const formData = ref({
+const formData = ref<Parameters<typeof login>[0]>({
   email: '',
   password: '',
 })
@@ -19,6 +22,19 @@ const handleLogin = () => {
     },
   )
 }
+
+onMounted(() => {
+  const currentError = router.currentRoute.value.query.error
+  if (currentError) {
+    toast.add({
+      severity: 'error',
+      summary: 'Erreur de connexion',
+      detail: currentError,
+      life: 3000,
+    })
+    router.replace({ query: {} })
+  }
+})
 </script>
 
 <template>
@@ -26,31 +42,23 @@ const handleLogin = () => {
     <template #title>
       <div class="text-center flex flex-col justify-center gap-1">
         <div>Se connecter à votre compte</div>
-        <div class="text-surface-400 text-sm">Continuer en utilisant google</div>
+        <div class="text-surface-400 text-sm">Se connecter avec un service externe</div>
       </div>
     </template>
-
     <template #content>
       <div class="flex flex-col mt-6">
-        <Button
-          label="Se connecter avec Google"
-          icon="pi pi-google"
-          variant="outlined"
-          severity="contrast"
-          class="w-full justify-center mb-3"
-          :loading="isPending"
-          @click="() => {}"
-        />
+        <ExternalProviderButton :is-pending="isPending" provider="google" />
 
         <Divider align="center">
-          <span class="text-sm text-surface-400">Ou continuer avec</span>
+          <span class="text-sm text-surface-400">ou continuer avec</span>
         </Divider>
         <div class="flex flex-col gap-8 mt-3">
           <FloatLabel>
-            <InputText id="email" v-model="formData.email" class="w-full" />
+            <InputText id="email" v-model="formData.email" class="w-full" type="e" />
             <label for="email">Adresse email</label>
             <!-- TODO: Find simple way to display error message. https://github.com/Julien-R44/tuyau/issues/62 -->
             <!-- <Message severity="error" variant="simple" size="small">Username is required</Message> -->
+            <!-- {{ error?.value.errors['email'].message }} -->
           </FloatLabel>
           <FloatLabel>
             <Password
@@ -66,7 +74,6 @@ const handleLogin = () => {
 
           <Button
             label="Se connecter"
-            icon="pi pi-sign-in"
             class="w-full justify-center"
             :loading="isPending"
             @click="handleLogin()"

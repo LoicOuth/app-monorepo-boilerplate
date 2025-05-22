@@ -1,4 +1,5 @@
 import { defineConfig } from '@tuyau/core'
+import '@tuyau/utils/types'
 
 const tuyauConfig = defineConfig({
   codegen: {
@@ -11,7 +12,16 @@ const tuyauConfig = defineConfig({
     // routes: {
     //  only: [],
     // }
+    definitions: {
+      except: [/^\/api\/auth\/(.+)\/callback$/],
+    },
   },
 })
+
+// declare module '@tuyau/utils/types' {
+//   interface ValidationExceptionResponse {
+//     errors: Record<string, Array<{ message: string; rule: string; field: string }>>
+//   }
+// }
 
 export default tuyauConfig

@@ -1,4 +1,4 @@
-import UserDto from '#auth/dtos/user_dto'
+import UserDto from '#me/dtos/user_dto'
 import { assertExists } from '@adonisjs/core/helpers/assert'
 import type { HttpContext } from '@adonisjs/core/http'
 

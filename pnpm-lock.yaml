@@ -10,11 +10,14 @@ importers:
 
   apps/backend:
     dependencies:
+      '@adonisjs/ally':
+        specifier: ^5.1.0
+        version: 5.1.0(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))
       '@adonisjs/auth':
         specifier: ^9.4.0
         version: 9.4.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))(@adonisjs/lucid@21.6.1(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))(@vinejs/vine@3.0.1)(luxon@3.6.1)(mysql2@3.14.1))(@adonisjs/session@7.5.1(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))(@japa/api-client@3.1.0(@japa/assert@4.0.1(@japa/runner@4.2.0))(@japa/runner@4.2.0)))(@japa/api-client@3.1.0(@japa/assert@4.0.1(@japa/runner@4.2.0))(@japa/runner@4.2.0))(@japa/plugin-adonisjs@4.0.0(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))(@japa/api-client@3.1.0(@japa/assert@4.0.1(@japa/runner@4.2.0))(@japa/runner@4.2.0))(@japa/runner@4.2.0))
       '@adonisjs/core':
-        specifier: ^6.18.0
+        specifier: 6.18.0
         version: 6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1)
       '@adonisjs/cors':
         specifier: ^2.2.1
@@ -26,8 +29,8 @@ importers:
         specifier: ^7.5.1
         version: 7.5.1(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))(@japa/api-client@3.1.0(@japa/assert@4.0.1(@japa/runner@4.2.0))(@japa/runner@4.2.0))
       '@tuyau/core':
-        specifier: ^0.4.0
-        version: 0.4.0(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))
+        specifier: file:../../../contributing/tuyau/packages/core
+        version: file:../contributing/tuyau/packages/core(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))
       '@vinejs/vine':
         specifier: ^3.0.1
         version: 3.0.1
@@ -69,8 +72,8 @@ importers:
         specifier: 1.11.24
         version: 1.11.24
       '@tuyau/utils':
-        specifier: ^0.0.7
-        version: 0.0.7
+        specifier: file:../../../contributing/tuyau/packages/utils
+        version: file:../contributing/tuyau/packages/utils
       '@types/luxon':
         specifier: ^3.6.2
         version: 3.6.2
@@ -111,8 +114,8 @@ importers:
         specifier: ^5.76.0
         version: 5.76.0(vue@3.5.14(typescript@5.8.3))
       '@tuyau/client':
-        specifier: ^0.2.8
-        version: 0.2.8
+        specifier: file:../../../contributing/tuyau/packages/client
+        version: file:../contributing/tuyau/packages/client
       primeicons:
         specifier: ^7.0.0
         version: 7.0.0
@@ -195,6 +198,12 @@ packages:
   '@adonisjs/ace@13.3.0':
     resolution: {integrity: sha512-68dveDFd766p69cBvK/MtOrOP0+YKYLeHspa9KLEWcWk9suPf3pbGkHQ2pwDnvLJxBPHk4932KbbSSzzpGNZGw==}
     engines: {node: '>=18.16.0'}
+
+  '@adonisjs/ally@5.1.0':
+    resolution: {integrity: sha512-Zr+ScZJAH6i5N80cZUjLWX9yLsNQu8qK/syfcEK4XKBaX8watlUseN2xPMTr5dds/3CsqIBYI83Rpvv7dlvddQ==}
+    engines: {node: '>=20.6.0'}
+    peerDependencies:
+      '@adonisjs/core': ^6.2.0
 
   '@adonisjs/application@8.4.1':
     resolution: {integrity: sha512-2vwO/8DoKJ9AR4Vvllz08RcomBoETc3FMf+q+ri1BVVjc76tLGV3KcYZp8+uKOuEreiK6poQ7NwJrR1P5ANA/w==}
@@ -940,6 +949,10 @@ packages:
   '@poppinss/multiparty@2.0.1':
     resolution: {integrity: sha512-Pf3V9PFyZDIkDBBiAOT2hdmA+1l/+hverHbUnMzNzwtwgO50s2ZPt5KxUydVA0hceg9gryo5unQ0WUF1SO9tkQ==}
 
+  '@poppinss/oauth-client@7.0.0':
+    resolution: {integrity: sha512-oBWcbLDJxh+WSlSfM093u3Usw6qCa8HKAd1kFqNKY2LdK+4l5iqv6w2iTaSsiQFbACNgIS3VNIB1yQcmI1FI6w==}
+    engines: {node: '>=18.16.0'}
+
   '@poppinss/object-builder@1.1.0':
     resolution: {integrity: sha512-FOrOq52l7u8goR5yncX14+k+Ewi5djnrt1JwXeS/FvnwAPOiveFhiczCDuvXdssAwamtrV2hp5Rw9v+n2T7hQg==}
     engines: {node: '>=20.6.0'}
@@ -1340,17 +1353,17 @@ packages:
   '@tsconfig/node22@22.0.1':
     resolution: {integrity: sha512-VkgOa3n6jvs1p+r3DiwBqeEwGAwEvnVCg/hIjiANl5IEcqP3G0u5m8cBJspe1t9qjZRlZ7WFgqq5bJrGdgAKMg==}
 
-  '@tuyau/client@0.2.8':
-    resolution: {integrity: sha512-5CSn03iEWedcmpqeoiJP2EKybPM+O1LJ0M3rNrU2LpMl8yExWDwsajZCFTTsEq8XAWaqS9v/ee2bwqmLymtk+A==}
+  '@tuyau/client@file:../contributing/tuyau/packages/client':
+    resolution: {directory: ../contributing/tuyau/packages/client, type: directory}
 
-  '@tuyau/core@0.4.0':
-    resolution: {integrity: sha512-Es087jggoHErM3LPOquILsjDiiWaJthEDiw86BfFkwdsf4cJs2YmzC4uRhwDrpxPnyb/02GmgYJGAzyuJ5DIRw==}
+  '@tuyau/core@file:../contributing/tuyau/packages/core':
+    resolution: {directory: ../contributing/tuyau/packages/core, type: directory}
     engines: {node: '>=20.6.0'}
     peerDependencies:
       '@adonisjs/core': ^6.2.0
 
-  '@tuyau/utils@0.0.7':
-    resolution: {integrity: sha512-Y1JgQoshbcxEwmajeWpJibBmoBlGuEq38ICKmWQ5dS+ESqY0J0757rWcHAQgiB74J1vf/DxHkt8veBRSKTAjJQ==}
+  '@tuyau/utils@file:../contributing/tuyau/packages/utils':
+    resolution: {directory: ../contributing/tuyau/packages/utils, type: directory}
 
   '@types/bytes@3.1.5':
     resolution: {integrity: sha512-VgZkrJckypj85YxEsEavcMmmSOIzkUHqWmM4CCyia5dc54YwsXzJ5uT4fYxBQNEXx+oF1krlhgCbvfubXqZYsQ==}
@@ -1388,8 +1401,8 @@ packages:
   '@types/pluralize@0.0.33':
     resolution: {integrity: sha512-JOqsl+ZoCpP4e8TDke9W79FDcSgPAR0l6pixx2JHkhnRjvShyYiAYw2LVsnA7K08Y6DeOnaU6ujmENO4os/cYg==}
 
-  '@types/qs@6.9.18':
-    resolution: {integrity: sha512-kK7dgTYDyGqS+e2Q4aK9X3D7q234CIZ1Bv0q/7Z5IwRDoADNU81xXJK/YVyLbLTZCoIwUoDoffFeF+p/eIklAA==}
+  '@types/qs@6.14.0':
+    resolution: {integrity: sha512-eOunJqu0K1923aExK6y8p6fsihYEn/BYuQ4g0CxAAgFc4b/ZLN4CrsRZ55srTdqoiLzU2B2evC+apEIxprEzkQ==}
 
   '@types/superagent@8.1.9':
     resolution: {integrity: sha512-pTVjI73witn+9ILmoJdajHGW2jkSaOzhiFYF1Rd3EQ94kymLqB9PjD9ISg7WaALC7+dCHT0FGe9T2LktLq/3GQ==}
@@ -3112,8 +3125,8 @@ packages:
   pino-std-serializers@7.0.0:
     resolution: {integrity: sha512-e906FRY0+tV27iq4juKzSYPbUj2do2X2JX4EzSca1631EB2QJQUqGbDuERal7LCtOpxl6x3+nvo9NPZcmjkiFA==}
 
-  pino@9.6.0:
-    resolution: {integrity: sha512-i85pKRCt4qMjZ1+L7sy2Ag4t1atFcdbEt76+7iRJn1g2BvsnRMGu9p8pivl9fs63M2kF/A0OacFZhTub+m/qMg==}
+  pino@9.7.0:
+    resolution: {integrity: sha512-vnMCM6xZTb1WDmLvtG2lE/2p+t9hDEIvTWJsu6FejkE62vB7gDhvzrpFR4Cw2to+9JNQxVnkAKVPA1KPB98vWg==}
     hasBin: true
 
   pkg-dir@7.0.0:
@@ -3176,8 +3189,8 @@ packages:
   printable-characters@1.0.42:
     resolution: {integrity: sha512-dKp+C4iXWK4vVYZmYSd0KBH5F/h1HoZRsbJ82AVKRO3PEo8L4lBS/vLwhVtpwwuYcoIsVY+1JYKR268yn480uQ==}
 
-  process-warning@4.0.1:
-    resolution: {integrity: sha512-3c2LzQ3rY9d0hc1emcsHhfT9Jwz0cChib/QN89oME2R451w5fy3f0afAhERFZAwrbDU43wk12d0ORBpDVME50Q==}
+  process-warning@5.0.0:
+    resolution: {integrity: sha512-a39t9ApHNx2L4+HBnQKqxxHNs1r7KF+Intd8Q/g1bUh6q0WIp9voPXJ/x0j+ZL45KF1pJd9+q2jLIRMfvEshkA==}
 
   proxy-addr@2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
@@ -3946,6 +3959,12 @@ snapshots:
       youch: 3.3.4
       youch-terminal: 2.2.3
 
+  '@adonisjs/ally@5.1.0(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))':
+    dependencies:
+      '@adonisjs/core': 6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1)
+      '@poppinss/oauth-client': 7.0.0
+      '@poppinss/utils': 6.9.3
+
   '@adonisjs/application@8.4.1(@adonisjs/config@5.0.2)(@adonisjs/fold@10.1.3)':
     dependencies:
       '@adonisjs/config': 5.0.2
@@ -3999,7 +4018,7 @@ snapshots:
       '@poppinss/macroable': 1.0.4
       '@poppinss/multiparty': 2.0.1
       '@poppinss/utils': 6.9.3
-      '@types/qs': 6.9.18
+      '@types/qs': 6.14.0
       bytes: 3.1.2
       file-type: 20.5.0
       inflation: 2.1.0
@@ -4142,7 +4161,7 @@ snapshots:
     dependencies:
       '@poppinss/utils': 6.9.3
       abstract-logging: 2.0.1
-      pino: 9.6.0
+      pino: 9.7.0
 
   '@adonisjs/lucid@21.6.1(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))(@vinejs/vine@3.0.1)(luxon@3.6.1)(mysql2@3.14.1)':
     dependencies:
@@ -4745,6 +4764,11 @@ snapshots:
       safe-buffer: 5.2.1
       uid-safe: 2.1.5
 
+  '@poppinss/oauth-client@7.0.0':
+    dependencies:
+      '@poppinss/exception': 1.2.1
+      ky: 1.8.1
+
   '@poppinss/object-builder@1.1.0': {}
 
   '@poppinss/prompts@3.1.4':
@@ -5071,19 +5095,19 @@ snapshots:
 
   '@tsconfig/node22@22.0.1': {}
 
-  '@tuyau/client@0.2.8':
+  '@tuyau/client@file:../contributing/tuyau/packages/client':
     dependencies:
-      '@tuyau/utils': 0.0.7
+      '@tuyau/utils': file:../contributing/tuyau/packages/utils
       ky: 1.8.1
       object-to-formdata: 4.5.1
 
-  '@tuyau/core@0.4.0(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))':
+  '@tuyau/core@file:../contributing/tuyau/packages/core(@adonisjs/core@6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1))':
     dependencies:
       '@adonisjs/core': 6.18.0(@adonisjs/assembler@7.8.2(typescript@5.8.3))(@vinejs/vine@3.0.1)
-      '@tuyau/utils': 0.0.7
+      '@tuyau/utils': file:../contributing/tuyau/packages/utils
       ts-morph: 25.0.1
 
-  '@tuyau/utils@0.0.7': {}
+  '@tuyau/utils@file:../contributing/tuyau/packages/utils': {}
 
   '@types/bytes@3.1.5': {}
 
@@ -5113,7 +5137,7 @@ snapshots:
 
   '@types/pluralize@0.0.33': {}
 
-  '@types/qs@6.9.18': {}
+  '@types/qs@6.14.0': {}
 
   '@types/superagent@8.1.9':
     dependencies:
@@ -6784,14 +6808,14 @@ snapshots:
 
   pino-std-serializers@7.0.0: {}
 
-  pino@9.6.0:
+  pino@9.7.0:
     dependencies:
       atomic-sleep: 1.0.0
       fast-redact: 3.5.0
       on-exit-leak-free: 2.1.2
       pino-abstract-transport: 2.0.0
       pino-std-serializers: 7.0.0
-      process-warning: 4.0.1
+      process-warning: 5.0.0
       quick-format-unescaped: 4.0.4
       real-require: 0.2.0
       safe-stable-stringify: 2.5.0
@@ -6868,7 +6892,7 @@ snapshots:
 
   printable-characters@1.0.42: {}
 
-  process-warning@4.0.1: {}
+  process-warning@5.0.0: {}
 
   proxy-addr@2.0.7:
     dependencies:

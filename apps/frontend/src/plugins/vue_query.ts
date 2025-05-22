@@ -9,9 +9,7 @@ export const queryClient = new QueryClient({
       retry: ErrorHandler.queryHandleError,
     },
     mutations: {
-      onError: (error) => {
-        ErrorHandler.handleError(error)
-      },
+      retry: ErrorHandler.queryHandleError,
     },
   },
 })
