@@ -5,7 +5,7 @@ import vine from '@vinejs/vine'
 export default class RegisterController {
   static validator = vine.compile(
     vine.object({
-      email: vine.string().email(),
+      email: vine.string().email().unique({ table: 'users', column: 'email' }),
       fullName: vine.string(),
       password: vine.string(),
       passwordConfirmation: vine.string().sameAs('password'),

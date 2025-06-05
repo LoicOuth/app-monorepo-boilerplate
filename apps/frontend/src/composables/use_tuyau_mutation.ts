@@ -5,7 +5,7 @@ export const useTuyauMutation = <T extends (...args: any) => any>(
   endpoint: T,
   options?: UseMutationOptions<
     InferResponseType<typeof endpoint>,
-    InferErrorType<typeof endpoint>,
+    { value: Record<keyof Parameters<typeof endpoint>[0], string> },
     InferRequestType<typeof endpoint>
   >,
 ) => {

@@ -37,12 +37,29 @@ const handleRegister = () => {
         </Divider>
         <div class="flex flex-col gap-8 mt-3">
           <FloatLabel>
-            <InputText id="email" v-model="formData.email" class="w-full" type="email" />
+            <InputText
+              id="email"
+              v-model="formData.email"
+              class="w-full"
+              type="email"
+              :invalid="!!error?.value.email"
+            />
             <label for="email">Adresse email</label>
+            <Message v-if="error?.value.email" severity="error" size="small" variant="simple">
+              {{ error.value.email }}
+            </Message>
           </FloatLabel>
           <FloatLabel>
-            <InputText id="fullName" v-model="formData.fullName" class="w-full" />
+            <InputText
+              id="fullName"
+              v-model="formData.fullName"
+              class="w-full"
+              :invalid="!!error?.value.fullName"
+            />
             <label for="fullName">Nom</label>
+            <Message v-if="error?.value.fullName" severity="error" size="small" variant="simple">
+              {{ error.value.fullName }}
+            </Message>
           </FloatLabel>
           <FloatLabel>
             <Password
@@ -51,8 +68,12 @@ const handleRegister = () => {
               inputId="password"
               class="w-full"
               input-class="w-full"
+              :invalid="!!error?.value.password"
             />
             <label for="password">Mot de passe</label>
+            <Message v-if="error?.value.password" severity="error" size="small" variant="simple">
+              {{ error.value.password }}
+            </Message>
           </FloatLabel>
           <FloatLabel>
             <Password
