@@ -1,4 +1,4 @@
-import { HttpStatusCode } from '@/models/error_model'
+import { HttpStatusCode } from '@/models/error.model'
 import ErrorHandler from '@/services/error_handler'
 import { QueryClient, VueQueryPlugin, type VueQueryPluginOptions } from '@tanstack/vue-query'
 import { TuyauHTTPError } from '@tuyau/client'

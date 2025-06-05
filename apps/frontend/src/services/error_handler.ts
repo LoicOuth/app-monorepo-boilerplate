@@ -1,4 +1,4 @@
-import { HttpStatusCode, LogLevel, type HttpToastError } from '@/models/error_model'
+import { HttpStatusCode, LogLevel, type HttpToastError } from '@/models/error.model'
 import i18n from '@/plugins/i18n'
 import router from '@/router'
 import { TuyauHTTPError } from '@tuyau/client'

@@ -23,8 +23,8 @@ server.errorHandler(() => import('#core/exceptions/handler'))
  * the request URL.
  */
 server.use([
-  () => import('#core/middleware/container_bindings_middleware'),
-  () => import('#core/middleware/force_json_response_middleware'),
+  () => import('#core/middleware/container_bindings.middleware'),
+  () => import('#core/middleware/force_json_response.middleware'),
   () => import('@adonisjs/cors/cors_middleware'),
 ])
 
@@ -43,7 +43,7 @@ router.use([
  * the routes or the routes group.
  */
 export const middleware = router.named({
-  guest: () => import('#auth/middleware/guest_middleware'),
-  auth: () => import('#auth/middleware/auth_middleware'),
-  silentAuth: () => import('#auth/middleware/silent_auth_middleware'),
+  guest: () => import('#auth/middleware/guest.middleware'),
+  auth: () => import('#auth/middleware/auth.middleware'),
+  silentAuth: () => import('#auth/middleware/silent_auth.middleware'),
 })

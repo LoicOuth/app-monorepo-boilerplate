@@ -1,4 +1,4 @@
-import type { HttpToastError } from '@/models/error_model'
+import type { HttpToastError } from '@/models/error.model'
 
 export const httpErrorToast = ref<HttpToastError[]>([])
 

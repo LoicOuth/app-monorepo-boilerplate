@@ -1,7 +1,7 @@
 import { createI18n, type PluralizationRule } from 'vue-i18n'
 import en from '@/locales/en.json'
 import fr from '@/locales/fr.json'
-import LocalStorageHelper from '@/services/local_storage_helper'
+import LocalStorageHelper from '@/services/local_storage.helper'
 
 const messages = {
   fr: fr,

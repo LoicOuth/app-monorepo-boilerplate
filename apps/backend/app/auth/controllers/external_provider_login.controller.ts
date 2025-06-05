@@ -2,7 +2,6 @@ import User from '#me/models/user'
 import env from '#start/env'
 import { ExternalAuthProviders } from '#types/index'
 import type { HttpContext } from '@adonisjs/core/http'
-import { dd } from '@adonisjs/core/services/dumper'
 import encryption from '@adonisjs/core/services/encryption'
 
 export default class ExternalProviderLoginController {
